@@ -1,0 +1,755 @@
+
+/* =====================================
+   1. GENERAL STYLES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #263238;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+/* BOUNCING LOGO */
+.bounce-logo {
+    color: #ffffff;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* BOUNCE ANIMATION */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+header {
+    background-color: #172554;
+    padding: 18px 8%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 15px 20px;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px rgba(96, 165, 250, 0.4),
+        0 0 20px rgba(96, 165, 250, 0.3);
+
+    transition: box-shadow 0.3s ease;
+}
+
+/* GLOW EFFECT ON HOVER */
+.navbar:hover {
+    box-shadow:
+        0 0 15px rgba(96, 165, 250, 0.7),
+        0 0 30px rgba(96, 165, 250, 0.5),
+        0 0 45px rgba(96, 165, 250, 0.3);
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+
+/* =====================================
+   3. HOME SECTION
+===================================== */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.greeting {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.hero-content > p:not(.greeting) {
+    margin-bottom: 25px;
+    max-width: 550px;
+}
+
+
+/* =====================================
+   4. GENERAL BUTTONS
+===================================== */
+
+.btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   5. GENERAL SECTIONS
+===================================== */
+
+.section {
+    padding: 70px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: #172554;
+    margin-bottom: 25px;
+}
+
+#about > p {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   6. SKILLS AND PROJECT CARDS
+===================================== */
+
+.skills-section {
+    background-color: #eaf0fb;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px 22px;
+    border-radius: 12px;
+    flex: 1 1 220px;
+    max-width: 320px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.project-card {
+    border-top: 4px solid #2563eb;
+}
+
+
+/* =====================================
+   7. CONTACT SECTION
+===================================== */
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 60px 8%;
+    background-color: #f5f7fb;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+/* CONTACT CONTAINER */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CONTACT INFORMATION AND FORM */
+.contact-info,
+.contact-form {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.12);
+    text-align: left;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+/* GOOGLE MAP */
+.map-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #2563eb;
+}
+
+.map-container iframe {
+    display: block;
+}
+
+/* CONTACT FORM */
+.contact-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #172554;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* SEND BUTTON */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 650px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-section {
+        padding: 40px 5%;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* =====================================
+   8. FOOTER
+===================================== */
+
+footer {
+    background-color: #172554;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* =====================================
+   9. LOGIN PAGE BACKGROUND
+===================================== */
+
+body.login-page {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+/* =====================================
+   10. LOGIN CONTAINER
+===================================== */
+
+.login-container {
+    background-color: white;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border: 1px solid #2563eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 20px rgba(18, 15, 211, 0.15),
+        0 0 15px rgba(37, 99, 235, 0.35),
+        0 0 30px rgba(37, 99, 235, 0.20);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+    box-shadow:
+        0 10px 25px rgba(18, 15, 211, 0.20),
+        0 0 25px rgba(37, 99, 235, 0.50),
+        0 0 45px rgba(37, 99, 235, 0.30);
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #1e293b;
+}
+
+.login-container p {
+    text-align: center;
+    color: gray;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+}
+
+.login-container .signup {
+    margin-top: 20px;
+}
+
+
+/* =====================================
+   11. LOGIN BUTTON
+===================================== */
+
+.login-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #2563eb;
+    color: white !important;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #1d4ed8;
+    color: white !important;
+}
+
+
+/* =====================================
+   12. LOGIN LINKS
+===================================== */
+
+.login-container a:not(.login-button) {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.login-container a:not(.login-button):hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   13. GALLERY SECTION
+===================================== */
+
+.gallery-section {
+    min-height: 85vh;
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #f5f7fb;
+}
+
+.gallery-section h1 {
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.gallery-section > p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+
+/* =====================================
+   14. IMAGE SLIDER
+===================================== */
+
+.slider {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto 35px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    border: 3px solid #2563eb;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.2),
+        0 0 20px rgba(37, 99, 235, 0.25);
+}
+
+/* Hide Radio Buttons */
+
+.slider input {
+    display: none;
+}
+
+/* Slides Container */
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+/* Individual Slide */
+
+.slide {
+    width: 25%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slide Movement */
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-25%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-50%);
+}
+
+#slide4:checked ~ .slides {
+    transform: translateX(-75%);
+}
+
+
+/* =====================================
+   15. SLIDER NAVIGATION DOTS
+===================================== */
+
+/* AUTOMATIC IMAGE SLIDER */
+.slider {
+    width: 100%;
+    max-width: 850px;
+    height: 450px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    border: 3px solid #2563eb;
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, 0.4),
+        0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+
+    animation: autoSlide 16s infinite;
+}
+
+.slide {
+    width: 25%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* AUTOMATIC ANIMATION */
+@keyframes autoSlide {
+    0%, 20% {
+        transform: translateX(0);
+    }
+
+    25%, 45% {
+        transform: translateX(-25%);
+    }
+
+    50%, 70% {
+        transform: translateX(-50%);
+    }
+
+    75%, 95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 650px) {
+    .slider {
+        height: 280px;
+    }
+}
+
+/* =====================================
+   16. MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 650px) {
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* Home */
+
+    .hero {
+        min-height: 70vh;
+        padding: 50px 7%;
+    }
+
+    /* General Sections */
+
+    .section {
+        padding: 50px 7%;
+    }
+
+    /* Cards */
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* Login */
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    /* Gallery */
+
+    .gallery-section {
+        padding: 40px 5%;
+    }
+
+    .gallery-section h1 {
+        font-size: 28px;
+    }
+
+    .slider {
+        height: 280px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* MUSIC PLAYER */
+.music-player {
+    max-width: 450px;
+    margin: 40px auto 10px;
+    padding: 25px;
+
+    background-color: white;
+    border: 2px solid #2563eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, 0.3),
+        0 0 20px rgba(37, 99, 235, 0.2);
+
+    text-align: center;
+}
+
+.music-player h2 {
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+.music-player p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.music-player audio {
+    width: 100%;
+}
+
+
+
+/* WELCOME GIF */
+.welcome-gif {
+    width: 10px;
+    height: 5px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+
+    filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.5));
+}
+
+
+
+
+
+
+
+
+
+}

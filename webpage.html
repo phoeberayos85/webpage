@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="webpage.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- MAIN CONTAINER -->
+    <!-- ============================= -->
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <h2>My Menu</h2>
+
+            <!-- Navigation Menu -->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#hobbies">My Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <hr>
+
+            <!-- Settings -->
+            <h3>Settings</h3>
+
+            <button onclick="toggleDarkMode()">
+                Dark / Light Mode
+            </button>
+
+            <br><br>
+
+            <button onclick="changeBackground()">
+                Change Background
+            </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- PROFILE CONTENT -->
+        <!-- ============================= -->
+
+        <div class="profile" id="home">
+
+            <h1>Phoebe B. Rayos, MMITM</h1>
+            <h3>BSIT Instructor</h3>
+
+            <!-- Live Clock -->
+            <p id="clock"></p>
+
+            <hr>
+
+            <!-- About Me Section -->
+            <h2 id="about">About Me</h2>
+
+            <p id="aboutText">
+                Hello! I am an instructor learning HTML, CSS, and JavaScript.
+                I enjoy coding and creating websites.
+            </p>
+
+            <button onclick="toggleAbout()">
+                Show / Hide About Me
+            </button>
+
+
+            <!-- Hobbies Section -->
+            <h2 id="hobbies">My Hobbies</h2>
+
+            <ul>
+                <li>Coding</li>
+                <li>Playing Online Games</li>
+                <li>Reading</li>
+            </ul>
+
+
+            <!-- Contact Section -->
+            <h2 id="contact">Contact</h2>
+
+            <p>Email: phoebe@example.com</p>
+
+            <hr>
+
+            <!-- Welcome Button -->
+            <button onclick="showMessage()">
+                Click Me
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 Phoebe B. Rayos, MMITM.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            BSIT Instructor | HTML, CSS, and JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- BACK TO TOP BUTTON -->
+    <!-- ============================= -->
+
+    <button id="topButton" onclick="backToTop()">
+        Back to Top ↑
+    </button>
+
+
+    
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        // 1. DISPLAY ALERT MESSAGE
+        function showMessage() {
+            alert("Hello, Students! Welcome to my profile website.");
+        }
+
+
+        // 2. DARK MODE / LIGHT MODE
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+
+        // 3. CHANGE BACKGROUND COLOR
+        function changeBackground() {
+
+            let colors = [
+                "#dbeafe",
+                "#dcfce7",
+                "#fef3c7",
+                "#fce7f3"
+            ];
+
+            let randomColor = Math.floor(
+                Math.random() * colors.length
+            );
+
+            document.body.style.backgroundColor =
+                colors[randomColor];
+
+        }
+
+
+        // 4. SHOW / HIDE ABOUT ME
+        function toggleAbout() {
+
+            let about = document.getElementById("aboutText");
+
+            if (about.style.display === "none") {
+                about.style.display = "block";
+            } else {
+                about.style.display = "none";
+            }
+
+        }
+
+
+        // 5. LIVE CLOCK
+        function updateClock() {
+
+            let now = new Date();
+
+            document.getElementById("clock").innerHTML =
+                "Current Date and Time: " + now.toLocaleString();
+
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+
+        // Display clock immediately
+        updateClock();
+
+
+        // 6. BACK TO TOP BUTTON
+        let topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {
+
+            if (document.documentElement.scrollTop > 200) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+
+        };
+
+
+        // Scroll back to the top
+        function backToTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
